@@ -6,6 +6,6 @@
 **usage** (from the command line):
 
 $ php faux_memcache.php
-![Screen Shot](https://https://github.com/nsardo/php-faux-memcache/blob/master/ss.png)
+![Screen Shot](https://github.com/nsardo/php-faux-memcache/blob/master/ss.png)
 
 *It displays the available commands and how to quit on the command line*
