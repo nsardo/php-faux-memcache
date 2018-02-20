@@ -140,7 +140,8 @@ EOT;
 
         if ( strlen( $k ) > 16  ) { return; }
         if ( strlen( $v ) > 255 ) { return; }
-
+        if ( is_numeric($v) ) $v = (int)$v;
+        
         if ( ! is_string($k) ) {
             echo 'KEY MUST BE A STRING';
             return;
@@ -206,6 +207,7 @@ EOT;
         if( ! is_string( $k ) )  { 'not string -add'; return; }
         if( strlen( $k ) > 16  ) { return; }
         if( strlen( $v ) > 255 ) { return; }
+        if( is_numeric($v) ) $v = (int)$v;
 
         if( ! is_string($k) ) {
             echo 'KEY MUST BE A STRING';
@@ -245,6 +247,7 @@ EOT;
         global $cache;
         
         if ( ! is_string($k) ) { return; }
+        if ( is_string( $cache[$k] ) ) { return; }
 
         if ( ! array_key_exists( $k, $cache ) ) {
             echo 'KEY DOES NOT EXIST';
@@ -283,6 +286,7 @@ EOT;
         global $cache;
 
         if( ! is_string($k) ) { return; }
+        if ( is_string( $cache[$k] ) ) { return; }
 
         if ( ! array_key_exists( $k, $cache ) ) {
             echo "KEY DOES NOT EXIST";
