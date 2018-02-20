@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="API Documentation" version="v2.9.0">
+  <partials/>
+  <file path="faux_memcache.php" generated-path="faux_memcache.html" hash="d7d03c63bea51ed94b83aa3434da5ce4" package="Default">
+    <docblock line="0">
+      <description>Faux Memcache</description>
+      <long-description>A toy implimentation of some of the basic features of memcache</long-description>
+      <tag name="author" line="0" description="Nicholas Sardo"/>
+      <tag name="copyright" line="0" description="2014-2018 Nicholas Sardo"/>
+      <tag name="license" line="0" description="MIT" link="http://opensource.org/licenses/MIT"/>
+      <tag name="version" line="0" description="1.0.0 Date: 3/19/14"/>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <constant namespace="" line="18" package="Default">
+      <name>SIZE</name>
+      <full_name>\SIZE</full_name>
+      <value>16000000</value>
+      <docblock line="18">
+        <description></description>
+        <long-description></long-description>
+        <tag name="global" line="18" description="int max size of memory cache"/>
+        <tag name="package" line="18" description="Default"/>
+      </docblock>
+    </constant>
+    <function namespace="" line="74" package="Default">
+      <name>check_array_size</name>
+      <full_name>\check_array_size()</full_name>
+      <docblock line="74">
+        <description>Ensure cache doesn't go over 16M bytes</description>
+        <long-description>Test's the array's potential finishing size after adding this value</long-description>
+        <tag name="package" line="74" description="Default"/>
+        <tag name="param" line="74" description="&lt;p&gt;value to add to cache&lt;/p&gt;" type="integer|string" variable="$val">
+          <type>integer</type>
+          <type>string</type>
+        </tag>
+        <tag name="return" line="74" description="" type="boolean">
+          <type>boolean</type>
+        </tag>
+      </docblock>
+      <argument line="0" by_reference="false">
+        <name>$val</name>
+        <default></default>
+        <type>integer|string</type>
+      </argument>
+    </function>
+    <function namespace="" line="107" package="Default">
+      <name>check_time</name>
+      <full_name>\check_time()</full_name>
+      <docblock line="107">
+        <description>Cache expiry check</description>
+        <long-description>Checks for expiring/expired key and removes it
+DISPLAY's *'EVICTED EXPIRED KEY'* if key is expired</long-description>
+        <tag name="package" line="107" description="Default"/>
+        <tag name="param" line="107" description="&lt;p&gt;a key&lt;/p&gt;" type="string" variable="$k">
+          <type>string</type>
+        </tag>
+        <tag name="return" line="107" description="" type="boolean">
+          <type>boolean</type>
+        </tag>
+      </docblock>
+      <argument line="0" by_reference="false">
+        <name>$k</name>
+        <default></default>
+        <type>string</type>
+      </argument>
+    </function>
+    <function namespace="" line="137" package="Default">
+      <name>set</name>
+      <full_name>\set()</full_name>
+      <docblock line="137">
+        <description>Sets the item associated w/ the key to specified value.</description>
+        <long-description>Expire is in # seconds.</long-description>
+        <tag name="package" line="137" description="Default"/>
+        <tag name="param" line="137" description="&lt;p&gt;a key&lt;/p&gt;" type="string" variable="$k">
+          <type>string</type>
+        </tag>
+        <tag name="param" line="137" description="&lt;p&gt;a value&lt;/p&gt;" type="integer|string" variable="$v">
+          <type>integer</type>
+          <type>string</type>
+        </tag>
+        <tag name="param" line="137" description="&lt;p&gt;&lt;strong&gt;(optional)&lt;/strong&gt; expire&lt;/p&gt;" type="integer" variable="$exp">
+          <type>integer</type>
+        </tag>
+        <tag name="return" line="137" description="STORED if successful" type="string">
+          <type>string</type>
+        </tag>
+      </docblock>
+      <argument line="0" by_reference="false">
+        <name>$k</name>
+        <default></default>
+        <type>string</type>
+      </argument>
+      <argument line="0" by_reference="false">
+        <name>$v</name>
+        <default></default>
+        <type>integer|string</type>
+      </argument>
+      <argument line="0" by_reference="false">
+        <name>$exp</name>
+        <default>NULL</default>
+        <type>integer</type>
+      </argument>
+    </function>
+    <function namespace="" line="172" package="Default">
+      <name>get</name>
+      <full_name>\get()</full_name>
+      <docblock line="172">
+        <description>Retrieves item from cache.</description>
+        <long-description></long-description>
+        <tag name="package" line="172" description="Default"/>
+        <tag name="param" line="172" description="&lt;p&gt;a key&lt;/p&gt;" type="string" variable="$k">
+          <type>string</type>
+        </tag>
+        <tag name="return" line="172" description="the value contained in the key or **KEY DOES NOT EXIST**" type="integer|string">
+          <type>integer</type>
+          <type>string</type>
+        </tag>
+      </docblock>
+      <argument line="0" by_reference="false">
+        <name>$k</name>
+        <default></default>
+        <type>string</type>
+      </argument>
+    </function>
+    <function namespace="" line="202" package="Default">
+      <name>add</name>
+      <full_name>\add()</full_name>
+      <docblock line="202">
+        <description>Adds the key and associated value to the cache,
+if the specified key does not already exist.</description>
+        <long-description></long-description>
+        <tag name="package" line="202" description="Default"/>
+        <tag name="param" line="202" description="&lt;p&gt;a key&lt;/p&gt;" type="string" variable="$k">
+          <type>string</type>
+        </tag>
+        <tag name="param" line="202" description="&lt;p&gt;a value&lt;/p&gt;" type="integer|string" variable="$v">
+          <type>integer</type>
+          <type>string</type>
+        </tag>
+        <tag name="param" line="202" description="&lt;p&gt;OPTIONAL expire&lt;/p&gt;" type="integer" variable="$exp">
+          <type>integer</type>
+        </tag>
+        <tag name="return" line="202" description="STORED on success, **ignore's** existing key" type="string">
+          <type>string</type>
+        </tag>
+      </docblock>
+      <argument line="0" by_reference="false">
+        <name>$k</name>
+        <default></default>
+        <type>string</type>
+      </argument>
+      <argument line="0" by_reference="false">
+        <name>$v</name>
+        <default></default>
+        <type>integer|string</type>
+      </argument>
+      <argument line="0" by_reference="false">
+        <name>$exp</name>
+        <default>null</default>
+        <type>integer</type>
+      </argument>
+    </function>
+    <function namespace="" line="243" package="Default">
+      <name>increment</name>
+      <full_name>\increment()</full_name>
+      <docblock line="243">
+        <description>Increment the item associated w/ the key by one, or by the optional amount.</description>
+        <long-description>Returns current count on success, *'KEY DOES NOT EXIST'* on non-existent key
+*Ignore's* action on Strings</long-description>
+        <tag name="package" line="243" description="Default"/>
+        <tag name="param" line="243" description="&lt;p&gt;a key&lt;/p&gt;" type="string" variable="$k">
+          <type>string</type>
+        </tag>
+        <tag name="param" line="243" description="&lt;p&gt;&lt;strong&gt;optional&lt;/strong&gt; increment amount, &lt;strong&gt;DEFAULT&lt;/strong&gt; is 1&lt;/p&gt;" type="integer" variable="$a">
+          <type>integer</type>
+        </tag>
+        <tag name="return" line="243" description="the newly incremented value" type="integer">
+          <type>integer</type>
+        </tag>
+      </docblock>
+      <argument line="0" by_reference="false">
+        <name>$k</name>
+        <default></default>
+        <type>string</type>
+      </argument>
+      <argument line="0" by_reference="false">
+        <name>$a</name>
+        <default>1</default>
+        <type>integer</type>
+      </argument>
+    </function>
+    <function namespace="" line="281" package="Default">
+      <name>decrement</name>
+      <full_name>\decrement()</full_name>
+      <docblock line="281">
+        <description>Decrement the item associated w/ the key by one, or by the optional amount.</description>
+        <long-description>Returns current count on success, *'KEY DOES NOT EXIST'* on non-existent key,
+*Ignore's* action on Strings</long-description>
+        <tag name="package" line="281" description="Default"/>
+        <tag name="param" line="281" description="&lt;p&gt;a key&lt;/p&gt;" type="string" variable="$k">
+          <type>string</type>
+        </tag>
+        <tag name="param" line="281" description="&lt;p&gt;&lt;strong&gt;optional&lt;/strong&gt; decrement amount, &lt;strong&gt;DEFAULT&lt;/strong&gt; is 1&lt;/p&gt;" type="integer|string" variable="$a">
+          <type>integer</type>
+          <type>string</type>
+        </tag>
+        <tag name="return" line="281" description="the newly decremented value" type="integer">
+          <type>integer</type>
+        </tag>
+      </docblock>
+      <argument line="0" by_reference="false">
+        <name>$k</name>
+        <default></default>
+        <type>string</type>
+      </argument>
+      <argument line="0" by_reference="false">
+        <name>$a</name>
+        <default>1</default>
+        <type>integer|string</type>
+      </argument>
+    </function>
+    <function namespace="" line="309" package="Default">
+      <name>delete</name>
+      <full_name>\delete()</full_name>
+      <docblock line="309">
+        <description>Delete the key and associated data from the cache.</description>
+        <long-description>Returns *'DELETED'* on success, *'KEY DOES NOT EXIST'* on non-existent key</long-description>
+        <tag name="package" line="309" description="Default"/>
+        <tag name="param" line="309" description="&lt;p&gt;a key&lt;/p&gt;" type="string" variable="$k">
+          <type>string</type>
+        </tag>
+        <tag name="return" line="309" description="&quot;DELETED&quot;" type="string">
+          <type>string</type>
+        </tag>
+      </docblock>
+      <argument line="0" by_reference="false">
+        <name>$k</name>
+        <default></default>
+        <type>string</type>
+      </argument>
+    </function>
+    <source>eJzVWftz27gR/l1/xcbVDClFtqI8bq625cRnK3ea+pFayk3TJOOBSEhCLZIqQfnRJP97dwGC4tOSYl96ZWILArGLxWK/bxfw/uv5dF6rtZvNGjThLVvcwin3HOZMOXXQzyFEwR0Ibz4THvcjFonAh2AMMvA4fUZTDiMmhQNjzqJFyCX1ejktb9gimgYhnAlnGsyYhAEL3UC9cYL5XSgm0wieP+u83MZfP5cNmwmH+5LDaX+ovl/zUJIpnZ1nO8+o55hFfBdetDt/bXdeYke7VgN8cG2gGiQ0mQUjNgPhR+CxW5DiPzy2NgjvILZYj0V5arh8LHxuW4P+P3tWCzo/PVNPY2+p3Wj1xC13lT+aTd2FL5VOo6yuv0EXWBiyO7tMC9lWkBcR94DfzgVaGeE+yETjxFH2Go1GMZBqjk6E/f19q3c+tGpDLiPhT+Ci9+6kdhR4HvNdiePRacx1WzDhUQsk/RK+E3La7BYuP9Wc8Yjv1P6+EBHciGi6ixZhE3f139i1U8NZ9rT38EkayoitT/4BbMWrpedmKmbcRoeg5eOQM9eGwfC4f9aCV53ngOYvFXxZStEjxmDDPOSTS49FztQGq01mtAXuDqprAHz9mntP5i3fN+CLMnwPvmUUZ2XsTzdPG5+k+nj9Sb4uNmKN+KOEcE8ae1lT647n4vrM+4+dz3vFpTjBwo/slBLY7wK5wAl83K8Fzyu9Dkdppc+rlZoxDeh24QU0MuO+ZL4lkuOF7xDEL9FFMpK2XgR67Ytq2Xr+Rt5530o2qbgyNOPlSjPqcvSv9AJf5Ba42lRI29rSCr/f4lePYnEd0Zse8/IxVtXSakvWlv6mEajwl1q8IR7Ddz1fInnHfOMGXPpWBJMAAiRapL1TGN1FXJrR5pNIxZKK9BTzYHseRMgXAqkMmVPIKXGOIlo2jlAVcg31RFMh4ZrNFjyv8s2chcwjHvwqo5DG1nGcHou5iBTQR4as34QcU48PoyCY5fRpnjReBRRyri6VrZdkla216y1ebm1MxpqwUwhUW/REyEt/4fFQOEYc/9UldrAZ6nR/x64uJN9tQ/xpgkgNP1IvKwRKxpN6yI1XVpTQb4QZY12oW97oEl0+476VpWDzFBVpy2h3u5BI24XFtcD6eSQiK21iEovFefgME/2Gs1dNXTploSeOHxujrlHQ8LTQTztw0AUqCuA1jBnZu4u+JrZersshrKOje7cOn6voq3PCcXG9hFDr0Me8ZEYGjrMIQ+7uAmYZlNs+wPx8yqVkE243WpRRM3jWv/Og1vbHhYMK/TzajqhTwhizuBqGeGurBpYyV/wOsEhA53jIAhKrECN13B+8Ozn8gGhvWr3f+0fD3jH0/vGuf4Gff+t9sJoUYSSOII+1VcDcQPwKGAmUAfpeJFM1ZJP4vQhuUaGUgTGiGI271NPb9au4LlAb4QdRbJe1F0fGXjpfkLRmELR4ydNXahZCTi6z2OBibWrDltd22x9guit2sfDaaqlSjmo1OCDJj/Wrzx8t7S5pfc4DsBg25dg2zwKr5cgwCekuQ0J+cIkV1ULaW2X7Xy0T72sWKubZADJZGx4AnWTuKk5Q6M6Or4LbgEc6F6p6nUkZOAJ33oWbtuomRGDqknPuiLHAfpXUdhJM9JTXCTTCh78gv2MN6MqdDaFTkj9xRCbXLsfoCqLZtAPlPDZr4KFD734ei7G2wfCcthkBLheOg24dL2blCNUhRbC4bpkC6Oz9ycmmWMV4SNj9SqGl8xMovC7BWT76Wo1+/upVbnQunxeZoFhAWRjXcPp+MIRfengoHgwv+me/5gI9niBdZmUmKis+8oedtL5qgKdQjUXldTneiHmU258Yv5cBvLuCnZ6aIjMzR+mE2lE6QCzYKUHaj0yKegeKLaouKhweM9rFxfkFbG8fHR791oO36Dlrdaq94BhAXKdJBP84DDxdo24K3xhtKfwSdejyl86ETPjIHEgQhlEwdTebFJ3H570BnJ0PkYr7g2FiWg6VE43KhydMPGc/KeZBhXelQ6fUCiRlbS3HEZQDqTL5xjXz9+CJtApZmQNzKT0vmS9FKrip4IkUih8IlqVzHxkw34q3aIeuK5Pgo/owleiSUxq915FkxIS+K1wmPxKngyZQvcVmdAt0B2pDf0DGO3837J+fHZ6slesol+lc10KoiYkfhNySKlEKfam2tCaHNjytFnKgv5htcuLMIs8EGEZYqlCFbZwoU62m5TfInpslzx+VO6tTZwXSdV6v4Am6e9g+SDjqQVV2WtmKdGyWkk/JWsNjJeai8+/Lx8rTf5qqO3UVkGpmbwPWTNiF1Vbl7b657F5VuI8w0/qYGDHdYpN6TckMzKOLw4S1LlQoS1AOQcXqWjFLImU5sElD/MDfVsFKgimOa/YN6wDTzIL/Bwp3hUu5ddkS6gzpzKwC6Sy5+I9XRGx33Ht7+P5kSG8ldEqqFOUKn9/M7pbyJhOUc2IyLMYjw1DvrCJE072ydL+nzF9ZN1Rx1zrVShlz1SPigyU5IGTZXtaqEmKL7qthlFDmAjJ1wF95VX0/makFZzQ+7dL2NB6LO/4o3nh4ld8fbMgbx/xPzRtJ2fVHEEdSZuX4I/lr4XfyRyJ/P38kwzbhj1VVyyPTxlZxo7Y2KHjWw/g6p5siprfvwfT/+nxehjP6s3PVeQMrJKbP2smBowCnpnXcO+kNsQRqPjAJb3aCj19vxbNvVQUzrW/1ifz/IYJhOXF5MK51Jx1Hf9lh3NWH8Yrrarf8uloHqomBIsGvF/KP9jea/wKUwgPL</source>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="global" full_name="global"/>
+  <namespace name="global" full_name="global"/>
+  <deprecated count="0"/>
+</project>
